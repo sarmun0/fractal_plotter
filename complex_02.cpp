@@ -1,6 +1,7 @@
 /*
  * This software is distributed under GPL v3
  * author: sarmun0
+ * Uses GTK 3
  */
 
 #include <cstdio>
@@ -54,6 +55,8 @@ void julify(unsigned int Sx,unsigned int Sy,unsigned int l,complex u,FILE* fi,Gt
     }
   }
 }
+
+//The function below is used to change values in entries into variables
 
 void click(GtkWidget *button,GtkWidget **b){
   unsigned int sx,sy,iters;
