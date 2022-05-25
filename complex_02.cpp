@@ -1,3 +1,8 @@
+/*
+ * This software is distributed under GPL v3
+ * author: sarmun0
+ */
+
 #include <cstdio>
 #include "my_complex.h"
 #include <gtk/gtk.h>
