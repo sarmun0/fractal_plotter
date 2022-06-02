@@ -26,8 +26,8 @@ void loop(complex a,complex u,unsigned int l,unsigned int* c) {
 }
 
 void barify(GtkWidget* bar,double percent) {
-  gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(bar),(gdouble)percent);
-  g_print("%.15lg\n",percent);
+  gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(bar),percent);
+  g_print("%.15lg\r",percent);
 }
 
 void julify(unsigned int Sx,unsigned int Sy,unsigned int l,complex u,FILE* fi,GtkWidget* bar){
@@ -41,10 +41,6 @@ void julify(unsigned int Sx,unsigned int Sy,unsigned int l,complex u,FILE* fi,Gt
       c=0;
       a.re=remax*(2*(double)j/Sx-1);
       a.im=immax*(1-2*(double)i/Sy);
-//      while ((c<=l)&&(a.re*a.re+a.im*a.im<4)) {
-//        c++;
-//        a=f(a,u);
-//      }
       std::thread one (loop,a,u,l,&c);
       std::thread two (barify,bar,(double)((i-1)*Sx+j)/(Sy*Sx));
       one.join();

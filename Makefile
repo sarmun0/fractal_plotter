@@ -1,4 +1,6 @@
 all: libmy_complex.so complex_02
+clean:
+	rm complex_02 complex_02.o libmy_complex.so
 
 complex_02: complex_02.o
 	g++ complex_02.o libmy_complex.so -o complex_02 `pkg-config --libs gtk+-3.0` -lpthread
